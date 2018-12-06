@@ -79,5 +79,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/xd-14102004/TheDarkKnight.github.io.git
+  repository: git@gitbub.com:Bruce-Ming/Bruce-Ming.github.io.git
   branch: master

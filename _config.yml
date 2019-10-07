@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TheDarkKnight-ming的博客
-subtitle: TheDarkKnight-ming的博客
+title: bruce-ming的博客
+subtitle: bruce-ming的博客
 description: 
 keywords:
-author: TheDarkKnight-ming的
+author: bruce-ming
 language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://bruce-ming.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -25,7 +25,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+i18n_dir: :zh
 skip_render:
 
 # Writing
@@ -73,11 +73,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@gitbub.com:Bruce-Ming/Bruce-Ming.github.io.git
+  repository: git@github.com:Bruce-Ming/Bruce-Ming.github.io.git
   branch: master

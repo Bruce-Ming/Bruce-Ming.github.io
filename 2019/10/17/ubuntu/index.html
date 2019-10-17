@@ -55,28 +55,33 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="bruce-ming的博客">
-<meta property="og:url" content="https://bruce-ming.github.io/index.html">
+  <meta name="description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
+<meta name="keywords" content="ubuntu vscode win10 nginx 0x8007019e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu杂记">
+<meta property="og:url" content="https://bruce-ming.github.io/2019/10/17/ubuntu/index.html">
 <meta property="og:site_name" content="bruce-ming的博客">
+<meta property="og:description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-17T14:18:00.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bruce-ming的博客">
-  <link rel="canonical" href="https://bruce-ming.github.io/">
+<meta name="twitter:title" content="ubuntu杂记">
+<meta name="twitter:description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
+  <link rel="canonical" href="https://bruce-ming.github.io/2019/10/17/ubuntu/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>bruce-ming的博客</title>
+  <title>ubuntu杂记 | bruce-ming的博客</title>
   
 
 
@@ -188,10 +193,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2019/10/17/ubuntu/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -204,9 +209,8 @@
       <meta itemprop="name" content="bruce-ming的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/17/ubuntu/" class="post-title-link" itemprop="url">ubuntu杂记</a>
+        <h1 class="post-title" itemprop="name headline">ubuntu杂记
+
           
         </h1>
 
@@ -240,7 +244,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="win10下子系统ubuntu安装"><a href="#win10下子系统ubuntu安装" class="headerlink" title="win10下子系统ubuntu安装"></a>win10下子系统ubuntu安装</h2><p>在win10商店直接搜索安装,安装好运行时会报错</p>
+        <h2 id="win10下子系统ubuntu安装"><a href="#win10下子系统ubuntu安装" class="headerlink" title="win10下子系统ubuntu安装"></a>win10下子系统ubuntu安装</h2><p>在win10商店直接搜索安装,安装好运行时会报错</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Installing, this may take a few minutes...</span><br><span class="line">Installation Failed!</span><br><span class="line">Error: 0x8007019e</span><br><span class="line">Press any key to <span class="built_in">continue</span>...</span><br></pre></td></tr></table></figure>
 <p>原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
@@ -261,210 +265,51 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host 连接的主机的名称，可自定</span><br><span class="line"></span><br><span class="line">Hostname 远程主机的IP地址</span><br><span class="line"></span><br><span class="line">User 用于登录远程主机的用户名</span><br><span class="line"></span><br><span class="line">Port 用于登录远程主机的端口</span><br><span class="line"></span><br><span class="line">IdentityFile 本地的id_rsa的路径</span><br></pre></td></tr></table></figure>
 <p>具体配置及操作参考 <a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VS Code Remote SSH配置</a></p>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/ubuntu-vscode-win10-nginx-0x8007019e/" rel="tag"># ubuntu vscode win10 nginx 0x8007019e</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/07/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </article>
   
   
   
 
-    
-        
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2019/10/07/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="bruce-ming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bruce-ming的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-10-07 16:56:07" itemprop="dateCreated datePublished" datetime="2019-10-07T16:56:07+08:00">2019-10-07</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2018/12/06/docker-study/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="bruce-ming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="bruce-ming的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2018/12/06/docker-study/" class="post-title-link" itemprop="url">docker学习记录</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-
-              
-                
-              
-
-              <time title="Erstellt: 2018-12-06 20:44:37" itemprop="dateCreated datePublished" datetime="2018-12-06T20:44:37+08:00">2018-12-06</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2019-10-17 20:52:39" itemprop="dateModified" datetime="2019-10-17T20:52:39+08:00">2019-10-17</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="目标任务"><a href="#目标任务" class="headerlink" title="目标任务"></a>目标任务</h2><ul>
-<li>构建mongoDB环境</li>
-<li>构建node环境</li>
-<li>构建nginx环境</li>
-<li>整合这三个环境,以搭建基于koa2+angular/vue+mongoDB的全栈环境</li>
-</ul>
-<h2 id="docker是什么-为什么要使用docker"><a href="#docker是什么-为什么要使用docker" class="headerlink" title="docker是什么,为什么要使用docker"></a>docker是什么,为什么要使用docker</h2><p>docker是简化版linux container(LXC)引擎(管理各种所需依赖的容器),通过cgroup等机制对不同的container内运行的应用程序进行隔离,权限管理和quota分配等每个container拥有自己独立的各种命名空间(亦即资源)包括:PID进程, MNT文件系统, NET网络, IPC, UTS主机名等。并不包含操作系统内核。<br>docker是一个容器,用于对环境的构建,解决开发环境和部署环境的不同,以及部署在各种操作系统上的差异,做到依赖集成,并且对环境与部署机器的隔离.(Build once，Run anywhere，Configure once，Run anything),</p>
-<h2 id="docker的相关概念"><a href="#docker的相关概念" class="headerlink" title="docker的相关概念"></a>docker的相关概念</h2><ul>
-<li>镜像：类似虚拟机快照，大多都是在现有工具镜像上创建新镜像。</li>
-<li>容器：从镜像中创建应用环境，以单进程的方式运行。对外公开服务。是一种短暂的和一次性的环境。</li>
-<li>数据卷：完成数据持久化的功能，使得宿主系统和容器之间可以数据访问</li>
-<li>链接：引用其他容器，进行容器间通讯。</li>
-</ul>
-<h2 id="win10安装docker"><a href="#win10安装docker" class="headerlink" title="win10安装docker"></a>win10安装docker</h2><ul>
-<li>开启Hyper-V,win10菜单右键-&gt;应用和功能-&gt;程序和功能-&gt;启用或关闭Windows功能-&gt;选中Hyper-V</li>
-<li>去<a href="https://www.docker.com/get-started" target="_blank" rel="noopener">docker官网</a>注册并登陆下载相应的win10最新镜像安装.注:下载的不是最新版本的,有点问题,需要启动后右键check for updates,更新到最新版就能正常使用了,还可以下载kitematic镜像管理工具搭配使用.</li>
-</ul>
-<h2 id="linux-ubuntu-下安装docker"><a href="#linux-ubuntu-下安装docker" class="headerlink" title="linux(ubuntu)下安装docker"></a>linux(ubuntu)下安装docker</h2><ul>
-<li>使用 ‘sudo apt-get install docker.io’ 命令安装 docker，然后通过 ‘docker version’ 查看版本。这样docker就在本机上安装了。</li>
-</ul>
-<h2 id="docker常用命令行-更多请参考菜鸟教程"><a href="#docker常用命令行-更多请参考菜鸟教程" class="headerlink" title="docker常用命令行,更多请参考菜鸟教程"></a>docker常用命令行,更多请参考<a href="https://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener">菜鸟教程</a></h2><h3 id="镜像仓库类-login-pull-push-search"><a href="#镜像仓库类-login-pull-push-search" class="headerlink" title="镜像仓库类 (login,pull,push,search)"></a>镜像仓库类 (login,pull,push,search)</h3><ul>
-<li>docker search mongo 查找镜像文件</li>
-<li>docker pull mongo:latest 拉取最新镜像文件,</li>
-</ul>
-<h3 id="容器操作-run-start-stop-restart-kill-rm-pause-unpause-create-exec"><a href="#容器操作-run-start-stop-restart-kill-rm-pause-unpause-create-exec" class="headerlink" title="容器操作 (run,start/stop/restart,kill,rm,pause/unpause,create,exec)"></a>容器操作 (run,start/stop/restart,kill,rm,pause/unpause,create,exec)</h3><ul>
-<li>docker run -v /my/own/datadir:/data/db –name mongo -d mongo mongod –smallfiles<br>(运行mongo容器。-v参数用来指明数据卷的位置，并以命名为/data/db。–name参数指明容器的名字，-d 表示以后台运行容器并返回容器ID。mongo mongod –smallfiles表示建立mongo镜像的容器并以smallfiles参数执行mongod。)</li>
-<li>docker ps 查看当前运行的容器 (加 -a查看当前所有容器)</li>
-<li>docker rm NAMES 删除容器 (可根据id或者name删除)</li>
-<li>docker restart NAMES 重启容器</li>
-</ul>
-<h3 id="容器rootfs命令-commit-cp-diff"><a href="#容器rootfs命令-commit-cp-diff" class="headerlink" title="容器rootfs命令 (commit,cp,diff)"></a>容器rootfs命令 (commit,cp,diff)</h3><h3 id="本地镜像管理-images-rmi-tag-build-history-save-load-import"><a href="#本地镜像管理-images-rmi-tag-build-history-save-load-import" class="headerlink" title="本地镜像管理 (images,rmi,tag,build,history,save,load,import)"></a>本地镜像管理 (images,rmi,tag,build,history,save,load,import)</h3><h3 id="其他命令-info-version"><a href="#其他命令-info-version" class="headerlink" title="其他命令 (info,version)"></a>其他命令 (info,version)</h3>
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
-
-  
-
 
 
           </div>
@@ -481,6 +326,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -493,6 +343,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#win10下子系统ubuntu安装"><span class="nav-number">1.</span> <span class="nav-text">win10下子系统ubuntu安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在ubuntu安装nginx-和使用nginx"><span class="nav-number">2.</span> <span class="nav-text">在ubuntu安装nginx,和使用nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nvm-配置node开发环境-参考nvm的github"><span class="nav-number">3.</span> <span class="nav-text">安装nvm,配置node开发环境,参考nvm的github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode配合win10下ubuntu的开发扩展remote-wsl"><span class="nav-number">4.</span> <span class="nav-text">vscode配合win10下ubuntu的开发扩展remote-wsl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接本机刚刚配置好的ubuntu"><span class="nav-number">4.1.</span> <span class="nav-text">连接本机刚刚配置好的ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置远程linux系统-无linux服务器未验证"><span class="nav-number">4.2.</span> <span class="nav-text">配置远程linux系统 (无linux服务器未验证)</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

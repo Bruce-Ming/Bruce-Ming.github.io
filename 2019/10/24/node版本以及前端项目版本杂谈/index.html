@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
-<meta name="keywords" content="nvm,ubuntu,vscode,win10,nginx">
+  <meta name="description" content="node版本对前端项目依赖的版本有着至关重要的影响.">
+<meta name="keywords" content="node nvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu杂记">
-<meta property="og:url" content="https://bruce-ming.github.io/2019/10/17/ubuntu/index.html">
+<meta property="og:title" content="node版本以及前端项目版本杂谈">
+<meta property="og:url" content="https://bruce-ming.github.io/2019/10/24/node版本以及前端项目版本杂谈/index.html">
 <meta property="og:site_name" content="bruce-ming的博客">
-<meta property="og:description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
+<meta property="og:description" content="node版本对前端项目依赖的版本有着至关重要的影响.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-17T15:09:09.426Z">
+<meta property="og:updated_time" content="2019-10-24T13:11:14.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu杂记">
-<meta name="twitter:description" content="win10下子系统ubuntu安装在win10商店直接搜索安装,安装好运行时会报错 1234Installing, this may take a few minutes...Installation Failed!Error: 0x8007019ePress any key to continue... 原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码 1Enable-Wind">
-  <link rel="canonical" href="https://bruce-ming.github.io/2019/10/17/ubuntu/">
+<meta name="twitter:title" content="node版本以及前端项目版本杂谈">
+<meta name="twitter:description" content="node版本对前端项目依赖的版本有着至关重要的影响.">
+  <link rel="canonical" href="https://bruce-ming.github.io/2019/10/24/node版本以及前端项目版本杂谈/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>ubuntu杂记 | bruce-ming的博客</title>
+  <title>node版本以及前端项目版本杂谈 | bruce-ming的博客</title>
   
 
 
@@ -223,7 +223,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2019/10/17/ubuntu/">
+    <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2019/10/24/node版本以及前端项目版本杂谈/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bruce-ming">
@@ -235,7 +235,7 @@
       <meta itemprop="name" content="bruce-ming的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">ubuntu杂记
+        <h1 class="post-title" itemprop="name headline">node版本以及前端项目版本杂谈
 
           
         </h1>
@@ -251,7 +251,7 @@
                 
               
 
-              <time title="创建时间：2019-10-17 22:14:42 / 修改时间：23:09:09" itemprop="dateCreated datePublished" datetime="2019-10-17T22:14:42+08:00">2019-10-17</time>
+              <time title="创建时间：2019-10-24 19:47:30 / 修改时间：21:11:14" itemprop="dateCreated datePublished" datetime="2019-10-24T19:47:30+08:00">2019-10-24</time>
             </span>
           
             
@@ -264,7 +264,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/服务器相关/" itemprop="url" rel="index"><span itemprop="name">服务器相关</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/node/" itemprop="url" rel="index"><span itemprop="name">node</span></a></span>
 
                 
                 
@@ -272,6 +272,8 @@
             </span>
           
 
+          
+            <div class="post-description">node版本对前端项目依赖的版本有着至关重要的影响.</div>
           
 
         </div>
@@ -283,26 +285,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="win10下子系统ubuntu安装"><a href="#win10下子系统ubuntu安装" class="headerlink" title="win10下子系统ubuntu安装"></a>win10下子系统ubuntu安装</h2><p>在win10商店直接搜索安装,安装好运行时会报错</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Installing, this may take a few minutes...</span><br><span class="line">Installation Failed!</span><br><span class="line">Error: 0x8007019e</span><br><span class="line">Press any key to <span class="built_in">continue</span>...</span><br></pre></td></tr></table></figure>
-<p>原因:未开启子系统支持服务.win10命令行管理员模式输入以下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<p>回车,输入Y,等待重启,重新打开安装就行了.<br>注:win10下ubuntu系统的文件夹在以下目录(括号中换成你自己用户的文件夹)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\(Administrator)\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs</span><br></pre></td></tr></table></figure>
-<h2 id="在ubuntu安装nginx-和使用nginx"><a href="#在ubuntu安装nginx-和使用nginx" class="headerlink" title="在ubuntu安装nginx,和使用nginx"></a>在ubuntu安装nginx,和使用nginx</h2><ul>
-<li>apt-get install nginx (安装nginx)</li>
-<li>sudo service nginx start/stop/reload/restart (启动nginx等操作)</li>
-<li>nginx -h 查看相关命令</li>
-</ul>
-<h2 id="安装nvm-配置node开发环境-参考nvm的github"><a href="#安装nvm-配置node开发环境-参考nvm的github" class="headerlink" title="安装nvm,配置node开发环境,参考nvm的github"></a>安装nvm,配置node开发环境,参考<a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm的github</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash</span><br></pre></td></tr></table></figure>
-<p>切记:安装好关闭命令行重启生效.<br>常用命令:nvm install/ls/use/run/exec/alias default/-h/-v</p>
-<h2 id="vscode配合win10下ubuntu的开发扩展remote-wsl"><a href="#vscode配合win10下ubuntu的开发扩展remote-wsl" class="headerlink" title="vscode配合win10下ubuntu的开发扩展remote-wsl"></a>vscode配合win10下ubuntu的开发扩展remote-wsl</h2><h3 id="连接本机刚刚配置好的ubuntu"><a href="#连接本机刚刚配置好的ubuntu" class="headerlink" title="连接本机刚刚配置好的ubuntu"></a>连接本机刚刚配置好的ubuntu</h3><p>安装好后左下角会有个&gt;&lt;标志,点击可以启动连接ubuntu,做远程开发,但是需要使用root账户登录才行,否则会有权限问题. powersell管理员模式输入以下命令即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu config --default-user root</span><br></pre></td></tr></table></figure>
-<h3 id="配置远程linux系统-无linux服务器未验证"><a href="#配置远程linux系统-无linux服务器未验证" class="headerlink" title="配置远程linux系统 (无linux服务器未验证)"></a>配置远程linux系统 (无linux服务器未验证)</h3><p>在vscode的远程资源管理器中新建配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host 连接的主机的名称，可自定</span><br><span class="line"></span><br><span class="line">Hostname 远程主机的IP地址</span><br><span class="line"></span><br><span class="line">User 用于登录远程主机的用户名</span><br><span class="line"></span><br><span class="line">Port 用于登录远程主机的端口</span><br><span class="line"></span><br><span class="line">IdentityFile 本地的id_rsa的路径</span><br></pre></td></tr></table></figure>
-<p>具体配置及操作参考 <a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VS Code Remote SSH配置</a></p>
+        <blockquote class="blockquote-center"><p>node版本以及前端项目依赖版本杂谈</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="node简介"><a href="#node简介" class="headerlink" title="node简介"></a>node简介</h2><p>服务端js,运行在谷歌v8引擎的js运行时</p>
+<p>node主要分两个版本类别: CURRENT和LTS版本,每个版本类别还随着时间的推移有着不同的版本. </p>
+<p>CURRENT为当前发布版本,包含最新功能.</p>
+<p>LTS为稳定版本,会得到长期的支持,所以一般开发使用LTS版本</p>
+<p>npm为前端最知名包管理工具,为node内置功能.</p>
+<h2 id="nvm-A-node-js-version-management"><a href="#nvm-A-node-js-version-management" class="headerlink" title="nvm (A node.js version management)"></a>nvm (A node.js version management)</h2><p>由于前端项目模块化进程的到来,每个项目所依赖的模块都有一个当前的版本,但是这些模块又随着时间的推移,修改bug,更新所需的依赖,会有版本的迭代,而node作为js运行时,对前端模块有着深远的影响.</p>
+<p>你是否遇到过由于新装电脑node版本,而以前的项目安装依赖报错,而跑不起来?这时候就需要版本控制,以及前端程序员对自己项目运行的环境了如指掌.</p>
+<h3 id="nvm安装"><a href="#nvm安装" class="headerlink" title="nvm安装"></a>nvm安装</h3><ol>
+<li>安装之前,把之前安装过的node卸载干净并确保node目录也删掉,并且删除npm安装位置（例如“ C：\ Users &lt;用户&gt; \ AppData \ Roaming \ npm”）,</li>
+<li>根据安装环境的不同安装不同版本的nvm:<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">windows版nvm</a>和<a href="https://github.com/nvm-sh/nvm#installation-and-update" target="_blank" rel="noopener">mac,linux版nvm</a></li>
+</ol>
+<p>安装建议使用运行包,免得配置环境变量.</p>
+<h3 id="nvm-使用"><a href="#nvm-使用" class="headerlink" title="nvm 使用"></a>nvm 使用</h3><p>nvm arch [32 | 64] 切换node运行在32位还是64位</p>
+<p>nvm list [available] 查看可安装node版本</p>
+<p>nvm install+版本号/uninstall+版本号/use+版本号 安装指定版本/卸载指定版本/使用指定版本 </p>
+<p>nvm on/off/version/proxy [url] 设置代理 </p>
+<p>nvm node_mirror <a href="https://npm.taobao.org/mirrors/node/" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/node/</a> 设置node仓库源</p>
+<p>nvm npm_mirror <a href="https://npm.taobao.org/mirrors/npm/" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/npm/</a> 设置npm仓库源</p>
+<p>注意:国内环境下,使用nvm install+版本号容易产生node安装成功,但是npm安装失败的情况,解决版本如下</p>
+<ol>
+<li>用上面的两个命令设置淘宝源,然后再安装.(家里环境直接用这步就成功了,公司用这个命令也没有成功)</li>
+<li>直接去node官网下载相应的免安装解压版本,放进nvm安装目录,解压改成v+版本号的命(例 v12.13.0),然后nvm就能读取到,直接nvm use使用就可以了.</li>
+</ol>
+<h2 id="项目依赖版本控制-package-json"><a href="#项目依赖版本控制-package-json" class="headerlink" title="项目依赖版本控制(package.json)"></a>项目依赖版本控制(package.json)</h2><p>在七八月份的ionic4项目中,由于对node版本和package-lock.json文件没有清楚的认识.在项目进行过程中,又有删除package-lock.json文件,和使用cnpm包管理工具等操作,引发了一系列bug.</p>
+<p>有时候用cnpm包管理工具安装依赖直接报错,或者安装成功,运行项目时候,直接提示某某模块不存在,而项目无法运行起来.顾在此郑重建议不要使用cnpm版本管理,速度是快,但是容易丢失安装文件(而且好像还没cnpm版本锁?)</p>
+<p>还有由于删除版本锁,安装了依赖以后,由于依赖文件的小版本问题,引起部分项目内容产生bug,没有报错,最终经排查对比,确定了是由于package-lock.json文件删除的原因, package-lock.json是对当前依赖的版本进行锁定,以防止由于版本变更引起bug.</p>
+<p>在产生bug以后查了很多资料,也了解了相关node及npm的知识,对package-lock.json问题讲解参考了<a href="https://www.shymean.com/article/%E8%AE%B0package-lock%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E6%AC%A1%E4%BA%8B%E6%95%85" target="_blank" rel="noopener">记package-lock引发的一次事故</a></p>
 
     </div>
 
@@ -318,15 +330,11 @@
           
           <div class="post-tags">
             
+              <a href="/tags/node/" rel="tag"># node</a>
+            
               <a href="/tags/nvm/" rel="tag"># nvm</a>
             
-              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
-            
-              <a href="/tags/vscode/" rel="tag"># vscode</a>
-            
-              <a href="/tags/win10/" rel="tag"># win10</a>
-            
-              <a href="/tags/nginx/" rel="tag"># nginx</a>
+              <a href="/tags/npm/" rel="tag"># npm</a>
             
           </div>
         
@@ -336,8 +344,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/07/hello-hexo/" rel="next" title="hexo使用指南">
-                  <i class="fa fa-chevron-left"></i> hexo使用指南
+                <a href="/2019/10/19/mongoDB/" rel="next" title="MongoDB学习摘要">
+                  <i class="fa fa-chevron-left"></i> MongoDB学习摘要
                 </a>
               
             </div>
@@ -345,10 +353,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/19/mongoDB/" rel="prev" title="MongoDB学习摘要">
-                  MongoDB学习摘要 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -394,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#win10下子系统ubuntu安装"><span class="nav-number">1.</span> <span class="nav-text">win10下子系统ubuntu安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在ubuntu安装nginx-和使用nginx"><span class="nav-number">2.</span> <span class="nav-text">在ubuntu安装nginx,和使用nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nvm-配置node开发环境-参考nvm的github"><span class="nav-number">3.</span> <span class="nav-text">安装nvm,配置node开发环境,参考nvm的github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode配合win10下ubuntu的开发扩展remote-wsl"><span class="nav-number">4.</span> <span class="nav-text">vscode配合win10下ubuntu的开发扩展remote-wsl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接本机刚刚配置好的ubuntu"><span class="nav-number">4.1.</span> <span class="nav-text">连接本机刚刚配置好的ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置远程linux系统-无linux服务器未验证"><span class="nav-number">4.2.</span> <span class="nav-text">配置远程linux系统 (无linux服务器未验证)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node简介"><span class="nav-number">1.</span> <span class="nav-text">node简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm-A-node-js-version-management"><span class="nav-number">2.</span> <span class="nav-text">nvm (A node.js version management)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm安装"><span class="nav-number">2.1.</span> <span class="nav-text">nvm安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm-使用"><span class="nav-number">2.2.</span> <span class="nav-text">nvm 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目依赖版本控制-package-json"><span class="nav-number">3.</span> <span class="nav-text">项目依赖版本控制(package.json)</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

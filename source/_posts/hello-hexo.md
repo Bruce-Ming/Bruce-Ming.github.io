@@ -31,7 +31,7 @@ $ hexo generate
 ### 推送到github上
 
 ``` bash
-$ hexo deploy
+ hexo deploy
 ```
 
 更多请参考: [Deployment](https://hexo.io/docs/deployment.html)

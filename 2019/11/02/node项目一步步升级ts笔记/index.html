@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="nodejs项目升级使用es6语法,到使用升级ts实录.">
+<meta name="keywords" content="babel,ts,node,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node项目升级ts笔记">
+<meta property="og:url" content="https://bruce-ming.github.io/2019/11/02/node项目一步步升级ts笔记/index.html">
+<meta property="og:site_name" content="bruce-ming的博客">
+<meta property="og:description" content="nodejs项目升级使用es6语法,到使用升级ts实录.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-03T04:58:57.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node项目升级ts笔记">
+<meta name="twitter:description" content="nodejs项目升级使用es6语法,到使用升级ts实录.">
+  <link rel="canonical" href="https://bruce-ming.github.io/2019/11/02/node项目一步步升级ts笔记/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>node项目升级ts笔记 | bruce-ming的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">bruce-ming的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">bruce-ming的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/bruce-ming" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://bruce-ming.github.io/2019/11/02/node项目一步步升级ts笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bruce-ming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bruce-ming的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">node项目升级ts笔记
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-02 21:41:05" itemprop="dateCreated datePublished" datetime="2019-11-02T21:41:05+08:00">2019-11-02</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-03 12:58:57" itemprop="dateModified" datetime="2019-11-03T12:58:57+08:00">2019-11-03</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">nodejs项目升级使用es6语法,到使用升级ts实录.</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <a id="more"></a>
+<h2 id="为什么要升级node项目"><a href="#为什么要升级node项目" class="headerlink" title="为什么要升级node项目."></a>为什么要升级node项目.</h2><p>本人自认为,TypeScript是js的未来,也对构建大型项目比较友好,在写node,koa小项目时突然想到了一个问题,为什么不能用import引入项目依赖呢,接下来引发了一系列思考.也决定对项目进行升级.刚开始的思路是升级到es6版本.但是后来想了想,何不一步到位,直接升级到ts呢.下面是升级过程,</p>
+<h2 id="升级es6利器babel"><a href="#升级es6利器babel" class="headerlink" title="升级es6利器babel."></a>升级es6利器babel.</h2><p>babel是一个js代码编译工具.js是一个不断发展的语言,有各个版本,还有不同的运行环境(浏览器环境,nodej环境),以及不同的浏览器环境(ie,firefox,chrome,等等).最新的es6代码以及ts代码等,不能直接在浏览器上运行,有的浏览器实现了es6的标准,但有些没有,所以就要通过babel来编译代码成es5的.</p>
+<p>之前也使用过babel,但认知还停留在引入依赖,编写配置文件阶段,没有认真深入研究.今天遇到了一个问题,在写node项目时,因为node采用的是Commonjs的<a href="https://blog.csdn.net/Real_Bird/article/details/54869066" target="_blank" rel="noopener">模块规范</a>,使用的都是require引入模块,但我发现有的项目就是使用import引入的,这时候就需要引入babel.</p>
+<h2 id="node中引入babel"><a href="#node中引入babel" class="headerlink" title="node中引入babel"></a>node中引入babel</h2><h3 id="babel6用法"><a href="#babel6用法" class="headerlink" title="babel6用法"></a>babel6用法</h3><ol>
+<li>在package.json中加入依赖,npm安装()</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;babel&quot;: &quot;^6.23.0&quot;,</span><br><span class="line">    &quot;babel-cli&quot;: &quot;^6.24.1&quot;,</span><br><span class="line">    &quot;babel-core&quot;: &quot;^6.24.0&quot;,</span><br><span class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.24.0&quot;,</span><br><span class="line">    &quot;babel-preset-stage-3&quot;: &quot;^6.22.0&quot;,</span><br><span class="line">    &quot;babel-register&quot;: &quot;^6.24.0&quot;,</span><br><span class="line">&#125;,</span><br><span class="line"> &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;babel-plugin-transform-async-to-generator&quot;: &quot;^6.24.1&quot;,</span><br><span class="line">    &quot;babel-plugin-transform-es2015-classes&quot;: &quot;^6.24.1&quot;,</span><br><span class="line">    &quot;babel-plugin-transform-es2015-modules-commonjs&quot;: &quot;^6.24.1&quot;,</span><br><span class="line">    &quot;babel-plugin-transform-export-extensions&quot;: &quot;^6.22.0&quot;,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加配置文件.babelrc</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  	&quot;presets&quot;: [&quot;stage-3&quot;],</span><br><span class="line">  	&quot;plugins&quot;: [</span><br><span class="line">  		&quot;transform-async-to-generator&quot;,</span><br><span class="line">        &quot;transform-es2015-modules-commonjs&quot;,</span><br><span class="line">        &quot;transform-export-extensions&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在加载node项目app.js之前先引入babel-core/register,新建index.js</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;babel-core/register&apos;);</span><br><span class="line">require(&apos;./app.js&apos;);</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>把原来的运行app.js,改成运行index.js</li>
+</ol>
+<h3 id="babel7用法"><a href="#babel7用法" class="headerlink" title="babel7用法"></a><a href="https://blog.csdn.net/weixin_34357887/article/details/91466569" target="_blank" rel="noopener">babel7用法</a></h3><ol>
+<li>安装babel7</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>新建.babelrc</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">&quot;presets&quot;: [&quot;@babel/preset-env&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>更新package.json</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">scripts&quot;: &#123;    </span><br><span class="line">        &quot;start&quot;: &quot;nodemon --exec babel-node src/server.js&quot;,    </span><br><span class="line">        &quot;build&quot;: &quot;babel src --out-dir dist&quot;,    </span><br><span class="line">        &quot;serve&quot;: &quot;node dist/server.js&quot;  </span><br><span class="line">     &#125;,  </span><br><span class="line">    &quot;author&quot;: &quot;&quot;,  </span><br><span class="line">    &quot;license&quot;: &quot;MIT&quot;,  </span><br><span class="line">    &quot;dependencies&quot;: &#123;  &#125;,  </span><br><span class="line">    &quot;devDependencies&quot;: &#123;    </span><br><span class="line">        &quot;@babel/cli&quot;: &quot;7.4.3&quot;,    </span><br><span class="line">        &quot;@babel/core&quot;: &quot;7.4.3&quot;,    </span><br><span class="line">        &quot;@babel/node&quot;: &quot;7.2.2&quot;,    </span><br><span class="line">        &quot;@babel/preset-env&quot;: &quot;7.4.3&quot;,    </span><br><span class="line">        &quot;nodemon&quot;: &quot;1.18.11&quot;  </span><br><span class="line">      &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://juejin.im/post/5b87cab1e51d4538ac05dc54" target="_blank" rel="noopener">babel相关文档</a></p>
+<h2 id="升级ts"><a href="#升级ts" class="headerlink" title="升级ts"></a>升级ts</h2><p><a href="https://www.jianshu.com/p/0b7ff3c38e0e" target="_blank" rel="noopener">相关资料</a></p>
+<ol>
+<li><p>报错’’ts-node’’ 不是内部或外部命令，也不是可运行的程序</p>
+<p> 解决办法:全局安装  </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cross-env –save-dev</span><br></pre></td></tr></table></figure>
+<pre><code>在原来的命令前面添加package.json
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross-env NODE_ENV=development nodemon --watch &apos;app/**/*&apos; -e ts --exec &apos;ts-node&apos; app.ts</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>ts中nodemon无效, </p>
+<p> 使用ts-node-dev模块代替</p>
+</li>
+<li><p>npx 运行模块中的依赖,不依赖全局环境</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>自己水平有限,使用ts还有诸多问题.还不如直接使用js或者直接学习egg来的实在,而且直接使用ts的实践还比较少.不够成熟.故最终放弃使用ts,升级失败 (┬＿┬)</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/babel/" rel="tag"># babel</a>
+            
+              <a href="/tags/js/" rel="tag"># js</a>
+            
+              <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+            
+              <a href="/tags/typescript/" rel="tag"># typescript</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/24/node版本以及前端项目版本杂谈/" rel="next" title="node版本以及前端项目版本杂谈">
+                  <i class="fa fa-chevron-left"></i> node版本以及前端项目版本杂谈
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要升级node项目"><span class="nav-number">1.</span> <span class="nav-text">为什么要升级node项目.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级es6利器babel"><span class="nav-number">2.</span> <span class="nav-text">升级es6利器babel.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node中引入babel"><span class="nav-number">3.</span> <span class="nav-text">node中引入babel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#babel6用法"><span class="nav-number">3.1.</span> <span class="nav-text">babel6用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#babel7用法"><span class="nav-number">3.2.</span> <span class="nav-text">babel7用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级ts"><span class="nav-number">4.</span> <span class="nav-text">升级ts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bruce-ming</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bruce-ming</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
